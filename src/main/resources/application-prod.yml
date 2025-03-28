@@ -1,0 +1,15 @@
+
+spring:
+  application:
+    name: personalApp
+  data:
+    mongodb:
+      uri: mongodb+srv://bibekamatya93:9argd9VgjiqVbWc2@cluster0.ynlxc8v.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      database: journaldb
+      auto-index-creation: true
+
+server:
+  port: 8081
+  servlet:
+    context-path: /prod
+

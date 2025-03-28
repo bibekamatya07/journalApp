@@ -1,0 +1,34 @@
+<configuration>
+
+    <appender name="myConsoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>
+                %d{HH:mm:ss:SSS}[%thread] %-5level %logger{36} - %msg%n
+            </pattern>
+        </encoder>
+
+    </appender>
+
+    <appender name="myAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>
+            journalApp.log
+        </file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>journalApp-%d{yy-MM-dd_HH-mm}.%i.log</fileNamePattern>
+            <maxFileSize>10MB</maxFileSize> <!--After the file size is 10MB will create new logback file-->
+            <!-- Will save max 2 log files, and after this will delete the oldest file after rotation-->
+            <maxHistory>3</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>
+                %d{HH:mm:ss:SSS}[%thread] %-5level %logger{36} - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="myConsoleAppender"></appender-ref>
+        <appender-ref ref="myAppender"></appender-ref>
+    </root>
+
+</configuration>
