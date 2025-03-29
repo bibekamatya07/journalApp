@@ -14,7 +14,7 @@ target/
 .springBeans
 .sts4-cache
 .yml
-.log
+*.log
 
 ### IntelliJ IDEA ###
 .idea
